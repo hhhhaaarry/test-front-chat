@@ -1,6 +1,6 @@
 <template>
     <div
-        class="modal container overflow-hidden min-w-0 sm:min-w-10 min-h-500 bg-slate-50 dark:bg-slate-900 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-200 shadow-lg">
+        class="modal container overflow-hidden min-w-0 sm:min-w-10 min-h-[500px] flex flex-col bg-slate-50 dark:bg-slate-900 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-200 shadow-lg">
         <header
             class="modal__header header flex flex-row justify-center w-full relative border-b-[1px] border-slate-400 dark:border-slate-700 p-3 px-6">
             <h2 class="modal__title header__title text-center text-lg font-bold">Comentarios</h2>
@@ -10,11 +10,12 @@
             </IconButton>
         </header>
         <main
-            class="modal__main chat flex flex-col-reverse justify-between gap-3 p-3 px-6 custom-scrollbar overflow-auto max-h-[70vh] ">
+            class="modal__main chat flex flex-col-reverse justify-between gap-3 p-3 px-6 custom-scrollbar overflow-auto max-h-[70vh]">
+            <div class="no-messages" v-if="!messages.length">No hay mensajes</div>
             <ChatItem v-for="(message, index) in sortedMessages" :key="index" :message="message" />
         </main>
         <div
-            class="modal__input flex flex-row p-3 px-6 gap-2 leading-none text-sm border-t-[1px] border-slate-400 dark:border-slate-700">
+            class="modal__input flex flex-row p-3 px-6 gap-2 leading-none text-sm border-t-[1px] border-slate-400 dark:border-slate-700 mt-auto">
             <input type="text"
                 class="input input--rounded w-full rounded-3xl bg-slate-100 dark:bg-slate-800 border-[1px] border-slate-400 dark:border-slate-700 px-3"
                 placeholder="Escribe un mensaje" v-model="newMessage" />
