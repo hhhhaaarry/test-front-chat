@@ -10,7 +10,7 @@
             </IconButton>
         </header>
         <main
-            class="modal__main chat flex flex-col-reverse justify-between gap-3 p-3 px-6 custom-scrollbar overflow-auto max-h-96 ">
+            class="modal__main chat flex flex-col-reverse justify-between gap-3 p-3 px-6 custom-scrollbar overflow-auto max-h-[70vh] ">
             <ChatItem v-for="(message, index) in sortedMessages" :key="index" :message="message" />
         </main>
         <div
