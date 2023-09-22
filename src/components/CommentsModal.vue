@@ -12,7 +12,7 @@
         <main
             class="modal__main chat flex flex-col-reverse justify-between gap-3 p-3 px-6 custom-scrollbar overflow-auto max-h-[70vh]">
             <div class="no-messages" v-if="!messages.length">No hay mensajes</div>
-            <ChatItem v-for="(message, index) in sortedMessages" :key="index" :message="message" />
+            <ChatItem v-for="(message, index) in sortedMessages" :key="index" :message="message" v-else />
         </main>
         <div
             class="modal__input flex flex-row p-3 px-6 gap-2 leading-none text-sm border-t-[1px] border-slate-400 dark:border-slate-700 mt-auto">

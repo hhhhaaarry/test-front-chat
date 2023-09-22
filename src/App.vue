@@ -1,7 +1,7 @@
 <template>
   <div id="main" class="w-full h-full max-w-full flex flex-col justify-center items-center bg-slate-200 dark:bg-slate-800 p-4">
     <button
-      class="toggle-modal w-fit bg-slate-50 dark:bg-slate-900 hover:border-blue-500 dark:hover:border-blue-300 text-slate-700 dark:text-slate-200"
+      class="toggle-modal w-fit bg-slate-50 dark:bg-slate-900 hover:border-blue-500 dark:hover:border-blue-300 text-slate-700 dark:text-slate-200 shadow-lg"
       @click="modalStore.toggleModal">Open Modal</button>
     <CommentsModal :messages="messages" v-show="modalStore.modal" />
   </div>
