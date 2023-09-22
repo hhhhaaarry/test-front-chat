@@ -1,6 +1,6 @@
 <template>
     <div
-        class="modal container max-w-lg overflow-hidden min-w-0 sm:min-w-10 min-h-500 bg-slate-50 dark:bg-slate-900 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-200 shadow-lg">
+        class="modal container overflow-hidden min-w-0 sm:min-w-10 min-h-500 bg-slate-50 dark:bg-slate-900 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-200 shadow-lg">
         <header
             class="modal__header header flex flex-row justify-center w-full relative border-b-[1px] border-slate-400 dark:border-slate-700 p-3 px-6">
             <h2 class="modal__title header__title text-center text-lg font-bold">Comentarios</h2>
@@ -66,7 +66,11 @@ onMounted(() => {
 </script>
 <style scoped>
 .modal {
-    max-width: calc(100vw - 2rem);
+    max-width: calc(100% - 4rem);
+
+    @media (min-width: 640px) {
+        max-width: 600px;
+    }
 }
 </style>
 ```
